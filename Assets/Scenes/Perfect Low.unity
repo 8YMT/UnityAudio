@@ -4871,6 +4871,7 @@ GameObject:
   - component: {fileID: 883451987}
   - component: {fileID: 883451986}
   - component: {fileID: 883451988}
+  - component: {fileID: 883451989}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -5005,6 +5006,67 @@ MonoBehaviour:
   audioSource: {fileID: 883451986}
   magnitude: 0
   energy: 0
+--- !u!114 &883451989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883451985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de760347813890439a669b8946373f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 883451986}
+  fftWindow: 5
+  fftSize: 8192
+  overlapPercentage: 75
+  avgTime: 0.1
+  freqLow: 20
+  freqHigh: 20000
+  rangeLow: -120
+  rangeHigh: 0
+  slope: 4.5
+  globalOffset: -1
+  spectrumImage: {fileID: 2132716961}
+  textureSize: {x: 512, y: 256}
+  backgroundColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  lineColor: {r: 1, g: 0.8164983, b: 0.3726415, a: 1}
+  lineThickness: 2
+  spectrumGradient:
+    serializedVersion: 2
+    key0: {r: 0.21586053, g: 0.68668544, b: 1, a: 1}
+    key1: {r: 0.21586053, g: 0.68668544, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 21588
+    ctime1: 62451
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  peakFrequencyText: {fileID: 908994745}
+  closestNoteText: {fileID: 118176513}
+  accuracyText: {fileID: 1199989352}
 --- !u!1 &883874448
 GameObject:
   m_ObjectHideFlags: 0
