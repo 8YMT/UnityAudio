@@ -4875,6 +4875,7 @@ GameObject:
   - component: {fileID: 883451990}
   - component: {fileID: 883451991}
   - component: {fileID: 883451992}
+  - component: {fileID: 883451993}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -5131,6 +5132,25 @@ MonoBehaviour:
   minTempo: 60
   maxTempo: 200
   Tempo: {fileID: 339396836}
+--- !u!114 &883451993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883451985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8206767bacdb16542ad192aa37b49aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oscilloscopeDisplay: {fileID: 1269724748}
+  audioSource: {fileID: 883451986}
+  tempoText: {fileID: 339396836}
+  backgroundColor: {r: 0.3018868, g: 0.28052688, b: 0.28052688, a: 1}
+  waveformColor: {r: 1, g: 0.7609758, b: 0, a: 1}
+  centerLineColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  beatMarkerColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
 --- !u!1 &883874448
 GameObject:
   m_ObjectHideFlags: 0
@@ -5793,7 +5813,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1000714558}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 883451993}
+        m_TargetAssemblyTypeName: OscilloscopeVisual, Assembly-CSharp
+        m_MethodName: SetQuarterBarMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1000714558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6913,7 +6945,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1298538356}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 883451993}
+        m_TargetAssemblyTypeName: OscilloscopeVisual, Assembly-CSharp
+        m_MethodName: SetFullBarMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1298538356
 MonoBehaviour:
   m_ObjectHideFlags: 0
