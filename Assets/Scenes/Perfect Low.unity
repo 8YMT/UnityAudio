@@ -4876,6 +4876,7 @@ GameObject:
   - component: {fileID: 883451991}
   - component: {fileID: 883451992}
   - component: {fileID: 883451993}
+  - component: {fileID: 883451994}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -5151,6 +5152,21 @@ MonoBehaviour:
   waveformColor: {r: 1, g: 0.7609758, b: 0, a: 1}
   centerLineColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   beatMarkerColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
+--- !u!114 &883451994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883451985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30696a44501584e41ad3519eac329c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 59ba621c5a7cd604eabccba1a052e80d, type: 2}
+  volumeSlider: {fileID: 1304632658}
+  volumeDisplayText: {fileID: 766384175}
 --- !u!1 &883874448
 GameObject:
   m_ObjectHideFlags: 0
