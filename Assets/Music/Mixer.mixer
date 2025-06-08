@@ -31,8 +31,8 @@ AudioMixerController:
   m_Snapshots:
   - {fileID: 24500006}
   m_StartSnapshot: {fileID: 24500006}
-  m_SuspendThreshold: -2.3
-  m_EnableSuspend: 1
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 0
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 0ffd1afdadb6fc8438c5a94093eade89
@@ -98,7 +98,7 @@ AudioMixerSnapshotController:
     48dad492e4354e34881303fc41be13a4: 1
     415f95b2a6fd0fd47a8e7dbe8b1cc97a: -31.7
     b37d5cd22e656ae4eb020624fc9c2d1e: 1
-    71dd9fd2e05f6774ab90e95c34ca5f64: -0.002441872
+    71dd9fd2e05f6774ab90e95c34ca5f64: 0
     ee4b00f2d0abfc344a65024f9103e9f1: 2
     b41cc50369233c041b3e47af6287785b: 24.4
     bfa51793f1cd4084aad6377a88d7eb90: -59.5
@@ -122,7 +122,7 @@ AudioMixerSnapshotController:
     d90a67bc2ac91fe43910a8c77e4fe1c6: 1500
     ec873dddf1909714a9f8836f9a967100: 1500
     5ab9eaed8dd27744eb330af5fb64e975: 1
-    0ffd1afdadb6fc8438c5a94093eade89: 0
+    0ffd1afdadb6fc8438c5a94093eade89: -10
     2b5a920eaa081664dae5f376e8276415: 200
     270a5f2e1171d624c9d6a57b1af3cdcd: 609
     5a8ae25eb9e03c547857a67f3c34330b: 0.54
