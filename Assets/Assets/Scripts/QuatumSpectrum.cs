@@ -46,6 +46,7 @@ public class correlation : MonoBehaviour
 
     void Start()
     {
+        // 
         if (!ValidateInputSource()) return;
         
         InitializeAudioSystem();
@@ -63,7 +64,6 @@ public class correlation : MonoBehaviour
 
     void OnValidate()
     {
-        // Ensure FFT size is a power of two for optimal performance
         fftSize = Mathf.ClosestPowerOfTwo(fftSize);
     }
 
@@ -71,9 +71,14 @@ public class correlation : MonoBehaviour
 
     #region Initialization
 
+   /********************************************************************
+    * ValidateInputSource: Validates whether the audiosource is valid or not *
+    *                          if the audiosource isn't equal to null it returns true  *
+    *                          else it returns false and debugs and error to the console log  *
+    ********************************************************************/
     private bool ValidateInputSource()
     {
-        if (inputAudioSource == null)
+        if (inputAudioSource != null)
         {
             inputAudioSource = GetComponent<AudioSource>();
         }
@@ -97,6 +102,7 @@ public class correlation : MonoBehaviour
         StartCoroutine(SpectralProcessing());
     }
 
+
     private void CreateOutputSources()
     {
         if (!createOutputSourcesAutomatically && 
@@ -113,6 +119,9 @@ public class correlation : MonoBehaviour
         }
     }
 
+    /********************************************************************
+    * StopChannels:  Returns an audioSource for both right and left channels*
+    ********************************************************************/
     private AudioSource CreateChannelSource(string name)
     {
         var source = new GameObject(name).AddComponent<AudioSource>();
@@ -127,6 +136,10 @@ public class correlation : MonoBehaviour
 
     #region Audio Processing
 
+    /********************************************************************
+    * SplitAudioChannels:  Take the original Raw audio data and splits on two new arrays*
+    *                      for left and right channels*
+    ********************************************************************/
     private void SplitAudioChannels()
     {
         AudioClip inputClip = inputAudioSource.clip;
@@ -146,6 +159,9 @@ public class correlation : MonoBehaviour
         }
     }
 
+    /********************************************************************
+    * CreateChannelClips:  Creates a new audioClip for both left and right channels seperatly *
+    ********************************************************************/
     private void CreateChannelClips()
     {
         AudioClip inputClip = inputAudioSource.clip;
@@ -172,6 +188,9 @@ public class correlation : MonoBehaviour
         rightChannelSource.clip = rightChannelClip;
     }
 
+    /********************************************************************
+    * CleanupAudioClips:  Destorys left and right channels if not equal to null*
+    ********************************************************************/
     private void CleanupAudioClips()
     {
         if (leftChannelClip != null)
@@ -189,6 +208,9 @@ public class correlation : MonoBehaviour
 
     #region Spectral Analysis
 
+    /********************************************************************
+    * InitializeSpectralAnalysis:  Allocating memory for the audio processing arrays*
+    ********************************************************************/
     private void InitializeSpectralAnalysis()
     {
         leftSpectrum = new float[fftSize];
@@ -204,6 +226,13 @@ public class correlation : MonoBehaviour
         isProcessing = true;
     }
 
+    /********************************************************************
+    * SpectralProccessing:  IEnumerator method (Coroutine)*
+    *                       That would Start the audio Processing *
+    *                       Waits until left and right channels are playing*
+    *                       Gets their spectral data using GetSpectrumData*
+    *                       Calls ProcessChannelSpectrum
+    ********************************************************************/
     private IEnumerator SpectralProcessing()
     {
         while (isProcessing)
@@ -233,9 +262,17 @@ public class correlation : MonoBehaviour
         }
     }
 
+    /********************************************************************
+    * ProcessChannelSpectrum:  spectrum: the channels spectral data array*
+    *                          smoothedSpecturm: smoothed channel's spectral data*
+    *                          previousSamples: The previous spectral data fetch array
+    *                          returns: Void
+    *                          Fills smoothedSpectrum with the overlapping data using the current
+    *                          and previous Spectral data Fetch
+    ********************************************************************/
     private void ProcessChannelSpectrum(float[] spectrum, float[] smoothedSpectrum, float[] previousSamples)
     {
-        // Apply overlap if we've processed at least one sample
+
         if (samplesProcessed > 0)
         {
             for (int i = 0; i < overlapSamples; i++)
@@ -244,10 +281,9 @@ public class correlation : MonoBehaviour
             }
         }
 
-        // Store current samples for next overlap
+
         System.Array.Copy(spectrum, previousSamples, overlapSamples);
 
-        // Apply exponential smoothing
         float smoothingFactor = Mathf.Clamp01(Time.deltaTime / spectrumSmoothingTime);
         for (int i = 0; i < fftSize; i++)
         {
@@ -259,18 +295,33 @@ public class correlation : MonoBehaviour
 
     #region Public Interface
 
+    /********************************************************************
+    * PlayChannels:  Plays the left and right audiosources *
+    *                checks if both audiosources valid (not equal to null)*
+    *                if valid it plays them*
+    ********************************************************************/
     public void PlayChannels()
     {
         if (leftChannelSource != null) leftChannelSource.Play();
         if (rightChannelSource != null) rightChannelSource.Play();
     }
 
+    /********************************************************************
+    * StopChannels:  Stops the left and right audiosources from playing*
+    *                checks if both audiosources valid (not equal to null)*
+    *                if valid it stops them from playing*
+    ********************************************************************/
     public void StopChannels()
     {
         if (leftChannelSource != null) leftChannelSource.Stop();
         if (rightChannelSource != null) rightChannelSource.Stop();
     }
 
+    /********************************************************************
+    * ToggleChannels: Checks if audiosources are playing*
+    *                 if any of the channels are playing it calls StopsChannels*
+    *                 if none of the channels are playing it calls PlayChannels*
+    ********************************************************************/
     public void ToggleChannels()
     {
         if (leftChannelSource.isPlaying || rightChannelSource.isPlaying)
