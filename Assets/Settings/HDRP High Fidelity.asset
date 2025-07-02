@@ -32,7 +32,7 @@ MonoBehaviour:
     supportLightLayers: 1
     renderingLayerMaskBuffer: 0
     supportWater: 1
-    waterSimulationResolution: 128
+    waterSimulationResolution: 256
     supportWaterExclusion: 0
     supportWaterDecals: 1
     waterDecalAtlasSize: 1024
@@ -106,12 +106,12 @@ MonoBehaviour:
         m_Bits: 0
       supportFabricConvolution: 0
       maxDirectionalLightsOnScreen: 16
-      maxPunctualLightsOnScreen: 512
+      maxPunctualLightsOnScreen: 2048
       maxAreaLightsOnScreen: 64
       maxCubeReflectionOnScreen: 32
       maxPlanarReflectionOnScreen: 16
       maxDecalsOnScreen: 1024
-      maxLightsPerClusterCell: 16
+      maxLightsPerClusterCell: 24
       maxLocalVolumetricFogSize: 32
       maxLocalVolumetricFogOnScreen: 64
     hdShadowInitParams:
@@ -187,12 +187,12 @@ MonoBehaviour:
       forceResolution: 0
       forcedPercentage: 100
       lowResTransparencyMinimumThreshold: 0
-      rayTracingHalfResThreshold: 50
+      rayTracingHalfResThreshold: 100
       lowResSSGIMinimumThreshold: 0
       lowResVolumetricCloudsMinimumThreshold: 50
       enableDLSS: 0
     lowresTransparentSettings:
-      enabled: 1
+      enabled: 0
       checkerboardDepthBuffer: 1
       upsampleType: 1
     xrSettings:
