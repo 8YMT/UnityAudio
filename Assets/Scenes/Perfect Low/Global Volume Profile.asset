@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953beb541740ddc499d005ee80c9ff29, type: 3}
   m_Name: Fog
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   quality:
     m_OverrideState: 1
     m_Value: 3
@@ -558,7 +558,7 @@ MonoBehaviour:
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 2.83
+    m_Value: 4
   directLightingStrength:
     m_OverrideState: 1
     m_Value: 1
@@ -614,7 +614,7 @@ MonoBehaviour:
     m_Value: 64
   m_Denoise:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   m_DenoiserRadius:
     m_OverrideState: 1
     m_Value: 1
