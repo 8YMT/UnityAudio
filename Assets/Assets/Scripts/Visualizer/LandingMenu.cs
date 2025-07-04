@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class LightDance : MonoBehaviour
+public class LandingMenu : MonoBehaviour
 {
     public AudioSource audioSource;
     private AudioClip audioClip;
@@ -29,7 +29,7 @@ public class LightDance : MonoBehaviour
     public Button NextButton;
 
     // List of ranges and names: [startSample, endSample], name
-    private List<(int[] range, string name)> audioRangeList = new List<(int[], string)>();
+    public List<(int[] range, string name)> audioRangeList = new List<(int[], string)>();
     private int RangeIndex = 0;
 
     void Start()
