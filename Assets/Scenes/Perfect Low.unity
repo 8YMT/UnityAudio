@@ -956,7 +956,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -1090,9 +1090,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -8913,13 +8913,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416195334}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20890674, y: -0.51111853, z: -0.8330148, w: -0.034672868}
+  m_LocalRotation: {x: 0.4087443, y: -0.34661376, z: -0.8440195, w: -0.020449772}
   m_LocalPosition: {x: 30.303665, y: 32.913673, z: 33.41246}
   m_LocalScale: {x: 81.43228, y: 23.215075, z: 71.15898}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1885779862}
-  m_LocalEulerAnglesHint: {x: -60, y: -38.697, z: -161.846}
+  m_LocalEulerAnglesHint: {x: -37, y: -57.8, z: -161.846}
 --- !u!114 &416195336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8939,7 +8939,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -9073,9 +9073,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -9640,7 +9640,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -9774,9 +9774,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -10078,7 +10078,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -10212,9 +10212,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -10558,7 +10558,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -10692,9 +10692,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -13497,7 +13497,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -13631,9 +13631,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -14145,7 +14145,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -14279,9 +14279,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -14322,7 +14322,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
-  m_ColorTemperature: 9904
+  m_ColorTemperature: 6713
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -14470,7 +14470,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -14604,9 +14604,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -14647,7 +14647,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
-  m_ColorTemperature: 9904
+  m_ColorTemperature: 6877
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -17060,7 +17060,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -17194,9 +17194,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -18086,7 +18086,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 99.99991
+  m_InnerSpotPercent: 100
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 0.09
   m_VolumetricDimmer: 1
@@ -18101,7 +18101,7 @@ MonoBehaviour:
   m_ShapeRadius: 0
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 1.5
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 0
   m_DisplayAreaLightEmissiveMesh: 0
@@ -18222,7 +18222,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 500000000
   m_Range: 80
-  m_SpotAngle: 1.5
+  m_SpotAngle: 2
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -18326,7 +18326,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -18460,9 +18460,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -19352,7 +19352,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 99.99991
+  m_InnerSpotPercent: 100
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 0.09
   m_VolumetricDimmer: 1
@@ -19367,7 +19367,7 @@ MonoBehaviour:
   m_ShapeRadius: 0
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 1.5
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 0
   m_DisplayAreaLightEmissiveMesh: 0
@@ -19488,7 +19488,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 500000000
   m_Range: 80
-  m_SpotAngle: 1.5
+  m_SpotAngle: 2
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -19756,7 +19756,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -19890,9 +19890,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -20878,7 +20878,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -21012,9 +21012,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -22717,7 +22717,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -22851,9 +22851,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -23307,7 +23307,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 99.99991
+  m_InnerSpotPercent: 100
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 0.09
   m_VolumetricDimmer: 1
@@ -23322,7 +23322,7 @@ MonoBehaviour:
   m_ShapeRadius: 0
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 1.5
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 0
   m_DisplayAreaLightEmissiveMesh: 0
@@ -23443,7 +23443,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 500000000
   m_Range: 80
-  m_SpotAngle: 1.5
+  m_SpotAngle: 2
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -24671,7 +24671,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -24805,9 +24805,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -25781,7 +25781,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -25915,9 +25915,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -26416,7 +26416,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -26550,9 +26550,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -26735,7 +26735,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -26869,9 +26869,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -28432,7 +28432,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -28566,9 +28566,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -29302,7 +29302,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 99.99991
+  m_InnerSpotPercent: 100
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 0.09
   m_VolumetricDimmer: 1
@@ -29317,7 +29317,7 @@ MonoBehaviour:
   m_ShapeRadius: 0
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 1.5
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 0
   m_DisplayAreaLightEmissiveMesh: 0
@@ -29438,7 +29438,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 500000000
   m_Range: 80
-  m_SpotAngle: 1.5
+  m_SpotAngle: 2
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -29520,8 +29520,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 59ba621c5a7cd604eabccba1a052e80d, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 60993f665ef87bb49af8e018ef6b31ad, type: 3}
-  m_Resource: {fileID: 8300000, guid: 60993f665ef87bb49af8e018ef6b31ad, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7c45a6392bbaf0143984e33422666e4d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7c45a6392bbaf0143984e33422666e4d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -29809,7 +29809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   analysisPanel: {fileID: 290717907}
-  analsisCanvas: {fileID: 170831810}
+  analysisCanvas: {fileID: 170831810}
   finishButton: {fileID: 891740965}
   statusText: {fileID: 943803780}
   audioSource: {fileID: 1266427894}
@@ -33923,7 +33923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1543468640
 Transform:
   m_ObjectHideFlags: 0
@@ -34225,7 +34225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -180, y: -60}
+  m_AnchoredPosition: {x: -240, y: -100}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555383398
@@ -35372,7 +35372,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 99.99991
+  m_InnerSpotPercent: 100
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 0.09
   m_VolumetricDimmer: 1
@@ -35387,7 +35387,7 @@ MonoBehaviour:
   m_ShapeRadius: 0
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 1.5
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 0
   m_DisplayAreaLightEmissiveMesh: 0
@@ -35508,7 +35508,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 500000000
   m_Range: 80
-  m_SpotAngle: 1.5
+  m_SpotAngle: 2
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -37167,7 +37167,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 99.99991
+  m_InnerSpotPercent: 100
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 0.09
   m_VolumetricDimmer: 1
@@ -37182,7 +37182,7 @@ MonoBehaviour:
   m_ShapeRadius: 0
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 1.5
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 0
   m_DisplayAreaLightEmissiveMesh: 0
@@ -37303,7 +37303,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 500000000
   m_Range: 80
-  m_SpotAngle: 1.5
+  m_SpotAngle: 2
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -37605,7 +37605,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -37739,9 +37739,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -38960,7 +38960,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -39094,9 +39094,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -42090,7 +42090,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 83.33333
+  m_InnerSpotPercent: 63.963223
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -42224,9 +42224,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 116106580
+  m_Intensity: 18577946
   m_Range: 200
-  m_SpotAngle: 1.2
+  m_SpotAngle: 3
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -42330,7 +42330,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -42464,9 +42464,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -42925,7 +42925,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 4.511278
+  m_InnerSpotPercent: 64.79119
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -43059,9 +43059,9 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8533149
+  m_Intensity: 4691282
   m_Range: 200
-  m_SpotAngle: 22.166666
+  m_SpotAngle: 29.93419
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -47375,7 +47375,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 99.99991
+  m_InnerSpotPercent: 100
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 0.09
   m_VolumetricDimmer: 1
@@ -47390,7 +47390,7 @@ MonoBehaviour:
   m_ShapeRadius: 0
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 1.5
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 0
   m_DisplayAreaLightEmissiveMesh: 0
@@ -47511,7 +47511,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 500000000
   m_Range: 80
-  m_SpotAngle: 1.5
+  m_SpotAngle: 2
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -47794,8 +47794,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 77.1, y: -48.6}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 35.8, y: -48.6}
+  m_SizeDelta: {x: 68.46, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2102787137
 MonoBehaviour:
@@ -48900,7 +48900,7 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 0
-  m_InnerSpotPercent: 99.99991
+  m_InnerSpotPercent: 100
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 0.09
   m_VolumetricDimmer: 1
@@ -48915,7 +48915,7 @@ MonoBehaviour:
   m_ShapeRadius: 0
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 1.5
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 0
   m_DisplayAreaLightEmissiveMesh: 0
@@ -49036,7 +49036,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 500000000
   m_Range: 80
-  m_SpotAngle: 1.5
+  m_SpotAngle: 2
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -52612,7 +52612,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 943696738}
   - {fileID: 9009420475542450546}
   - {fileID: 762180860030626248}
   - {fileID: 6268339714565726370}
@@ -52620,6 +52619,7 @@ Transform:
   - {fileID: 8997817073797661543}
   - {fileID: 2187152608895090799}
   - {fileID: 4136791124220208744}
+  - {fileID: 943696738}
   - {fileID: 961650013}
   - {fileID: 446774242}
   m_Father: {fileID: 0}

@@ -6,7 +6,7 @@ public class Execution : MonoBehaviour
 {
     [Header("UI References")]
     public Image analysisPanel;
-    public Canvas analsisCanvas;
+    public Canvas analysisCanvas;
     public Button finishButton;
     public Text statusText;
 
@@ -36,6 +36,17 @@ public class Execution : MonoBehaviour
     public Light[] ceilingLights = new Light[8];
     public Light[] secondFloorLights = new Light[12];
 
+    // Light control variables
+    private float[] sceneLightInitialIntensities = new float[11];
+    private float[] ceilingLightInitialIntensities = new float[8];
+    private float[] secondFloorLightInitialIntensities = new float[12];
+    private float currentEnergy = 0f;
+    private float energySmoothVelocity = 0f;
+    private const float ENERGY_SMOOTH_TIME = 0.1f;
+    private float peakEnergy = 0f;
+    private float peakDecayRate = 0.5f;
+
+    // Timing variables
     private int currentSectionIndex = 0;
     private float nextBeatTime = 0f;
     private float beatInterval = 0f;
@@ -43,12 +54,29 @@ public class Execution : MonoBehaviour
     private float sectionEndTime = 0f;
     private bool isPlayingVisuals = false;
     private int currentBeat = 0;
-    private float lastEnergy = 1f;
 
     void Start()
     {
         if (finishButton != null)
             finishButton.onClick.AddListener(OnFinishButtonClicked);
+
+        // Store initial light intensities
+        StoreInitialLightIntensities();
+    }
+
+    void StoreInitialLightIntensities()
+    {
+        for (int i = 0; i < sceneLights.Length; i++)
+            if (sceneLights[i] != null) 
+                sceneLightInitialIntensities[i] = sceneLights[i].intensity;
+        
+        for (int i = 0; i < ceilingLights.Length; i++)
+            if (ceilingLights[i] != null) 
+                ceilingLightInitialIntensities[i] = ceilingLights[i].intensity;
+        
+        for (int i = 0; i < secondFloorLights.Length; i++)
+            if (secondFloorLights[i] != null) 
+                secondFloorLightInitialIntensities[i] = secondFloorLights[i].intensity;
     }
 
     void Update()
@@ -69,15 +97,32 @@ public class Execution : MonoBehaviour
 
         if (isPlayingVisuals && audioSource != null && audioSource.isPlaying)
         {
+            UpdateEnergy();
             AdvanceSectionIfNeeded();
             AnimateLights();
         }
     }
 
-    private void SetLightActive(Light light, bool active)
+    private void UpdateEnergy()
     {
-        if (light != null)
-            light.gameObject.SetActive(active);
+        // Get current audio sample data for energy calculation
+        float[] samples = new float[1024];
+        audioSource.GetOutputData(samples, 0);
+        
+        // Calculate raw energy
+        float sum = 0f;
+        foreach (var sample in samples)
+            sum += Mathf.Abs(sample);
+        float newEnergy = sum / samples.Length;
+
+        // Update peak energy (momentary dynamic max)
+        if (newEnergy > peakEnergy)
+            peakEnergy = newEnergy;
+        else
+            peakEnergy = Mathf.Max(0, peakEnergy - peakDecayRate * Time.deltaTime);
+
+        // Smooth energy changes
+        currentEnergy = Mathf.SmoothDamp(currentEnergy, newEnergy, ref energySmoothVelocity, ENERGY_SMOOTH_TIME);
     }
 
     private void ImportExternalData()
@@ -220,7 +265,7 @@ public class Execution : MonoBehaviour
         if (analysisPanel != null)
         {
             analysisPanel.gameObject.SetActive(false);
-            analsisCanvas.gameObject.SetActive(false);
+            analysisCanvas.gameObject.SetActive(false);
         }
         if (audioSource != null)
         {
@@ -265,6 +310,7 @@ public class Execution : MonoBehaviour
     private void AnimateLights()
     {
         float t = audioSource.time;
+        float normalizedEnergy = peakEnergy > 0 ? currentEnergy / peakEnergy : 0;
 
         if (t >= nextBeatTime)
         {
@@ -276,38 +322,68 @@ public class Execution : MonoBehaviour
             return;
 
         var section = importedSections[currentSectionIndex];
-        AnimateSceneLights(sceneLights, section.SceneLights, currentBeat, beatInterval, t - sectionStartTime);
-        AnimateCeilingLights(ceilingLights, section.CeilingLights, currentBeat, beatInterval, t - sectionStartTime);
-        AnimateSecondFloorLights(secondFloorLights, section.SecondFloorLights, currentBeat, beatInterval, t - sectionStartTime);
+        AnimateSceneLights(sceneLights, section.SceneLights, currentBeat, beatInterval, t - sectionStartTime, normalizedEnergy);
+        AnimateCeilingLights(ceilingLights, section.CeilingLights, currentBeat, beatInterval, t - sectionStartTime, normalizedEnergy);
+        AnimateSecondFloorLights(secondFloorLights, section.SecondFloorLights, currentBeat, beatInterval, t - sectionStartTime, normalizedEnergy);
     }
 
-    private void AnimateSceneLights(Light[] lights, EditorManger.SceneLightsData lightData, int beat, float beatInterval, float sectionTime)
+    private void AnimateSceneLights(Light[] lights, EditorManger.SceneLightsData lightData, int beat, float beatInterval, float sectionTime, float energy)
     {
         if (lightData.Pulsing)
         {
             for (int i = 0; i < lights.Length; i++)
             {
-                bool on = lightData.PulsingSequence[beat][i];
-                if (lightData.Delayed != null && lightData.Delayed.Length > 0 && lightData.Delayed[0])
+                if (lights[i] == null) continue;
+                
+                bool shouldPulse = lightData.PulsingSequence[beat][i];
+                
+                if (shouldPulse)
                 {
-                    float lightBeatTime = beatInterval * i / lights.Length;
-                    on = ((sectionTime % (beatInterval * 4)) >= lightBeatTime) && on;
+                    // Calculate pulse phase based on beat timing
+                    float beatPhase = (sectionTime % beatInterval) / beatInterval;
+                    
+                    // Create smooth pulse envelope
+                    float pulseIntensity = Mathf.Sin(beatPhase * Mathf.PI);
+                    
+                    // Apply energy scaling (0 to initial intensity)
+                    lights[i].intensity = sceneLightInitialIntensities[i] * pulseIntensity * energy;
+                    
+                    // Ensure light is active
+                    lights[i].gameObject.SetActive(true);
                 }
-                SetLightActive(lights[i], on);
+                else
+                {
+                    // Turn off lights not in the current pulse sequence
+                    lights[i].intensity = 0;
+                }
             }
         }
 
         if (lightData.Rotation)
         {
+            // Energy affects rotation speed (0.5x to 2x range)
+            float energySpeedFactor = Mathf.Lerp(0.5f, 2f, energy);
+            
+            // Base speed completes a full cycle every 4 beats
+            float baseSpeed = (2f * Mathf.PI) / (beatInterval * 4f);
+            float actualSpeed = baseSpeed * energySpeedFactor;
+            
             for (int i = 0; i < lights.Length; i++)
             {
-                bool rotate = lightData.RotationSequence[i];
-                float[] startAngles = rotate ? lightData.OnStartingAngle : lightData.OffStartingAngle;
-                float[] angles = rotate ? lightData.OnAngle : lightData.OffAngle;
-                float phase = Mathf.Sin(sectionTime * 2f * Mathf.PI / beatInterval);
-
-                float angle = Mathf.Lerp(startAngles[0], angles[0], (phase + 1f) / 2f);
-                lights[i].transform.localRotation = Quaternion.Euler(angle, 0, 0);
+                if (lights[i] == null || !lightData.RotationSequence[i]) continue;
+                
+                // X and Z axis rotation (as specified)
+                float targetXAngle = lightData.OnAngle[0];
+                float targetZAngle = lightData.OnAngle.Length > 1 ? lightData.OnAngle[1] : 0f;
+                
+                // Calculate rotation based on time and speed
+                float currentRotation = sectionTime * actualSpeed;
+                
+                // Smooth interpolation between angles using sinusoidal easing
+                float xRot = Mathf.Lerp(0, targetXAngle, (Mathf.Sin(currentRotation) + 1f) / 2f);
+                float zRot = Mathf.Lerp(0, targetZAngle, (Mathf.Cos(currentRotation) + 1f) / 2f);
+                
+                lights[i].transform.localRotation = Quaternion.Euler(xRot, 0, zRot);
             }
         }
 
@@ -321,33 +397,49 @@ public class Execution : MonoBehaviour
         }
     }
 
-    private void AnimateCeilingLights(Light[] lights, EditorManger.CeilingLightsData lightData, int beat, float beatInterval, float sectionTime)
+    private void AnimateCeilingLights(Light[] lights, EditorManger.CeilingLightsData lightData, int beat, float beatInterval, float sectionTime, float energy)
     {
         if (lightData.Pulsing)
         {
             for (int i = 0; i < lights.Length; i++)
             {
-                bool on = lightData.PulsingSequence[beat][i];
-                if (lightData.Delayed != null && lightData.Delayed.Length > 0 && lightData.Delayed[0])
+                if (lights[i] == null) continue;
+                
+                bool shouldPulse = lightData.PulsingSequence[beat][i];
+                
+                if (shouldPulse)
                 {
-                    float lightBeatTime = beatInterval * i / lights.Length;
-                    on = ((sectionTime % (beatInterval * 4)) >= lightBeatTime) && on;
+                    float beatPhase = (sectionTime % beatInterval) / beatInterval;
+                    float pulseIntensity = Mathf.Sin(beatPhase * Mathf.PI);
+                    lights[i].intensity = ceilingLightInitialIntensities[i] * pulseIntensity * energy;
+                    lights[i].gameObject.SetActive(true);
                 }
-                SetLightActive(lights[i], on);
+                else
+                {
+                    lights[i].intensity = 0;
+                }
             }
         }
 
         if (lightData.Rotation)
         {
+            float energySpeedFactor = Mathf.Lerp(0.5f, 2f, energy);
+            float baseSpeed = (2f * Mathf.PI) / (beatInterval * 4f);
+            float actualSpeed = baseSpeed * energySpeedFactor;
+            
             for (int i = 0; i < lights.Length; i++)
             {
-                bool rotate = lightData.RotationSequence[i];
-                float[] startAngles = rotate ? lightData.OnStartingAngle : lightData.OffStartingAngle;
-                float[] angles = rotate ? lightData.OnAngle : lightData.OffAngle;
-                float phase = Mathf.Sin(sectionTime * 2f * Mathf.PI / beatInterval);
-
-                float angle = Mathf.Lerp(startAngles[0], angles[0], (phase + 1f) / 2f);
-                lights[i].transform.localRotation = Quaternion.Euler(0, angle, 0);
+                if (lights[i] == null || !lightData.RotationSequence[i]) continue;
+                
+                // X and Y axis rotation (as specified)
+                float targetXAngle = lightData.OnAngle[0];
+                float targetYAngle = lightData.OnAngle.Length > 1 ? lightData.OnAngle[1] : 0f;
+                
+                float currentRotation = sectionTime * actualSpeed;
+                float xRot = Mathf.Lerp(0, targetXAngle, (Mathf.Sin(currentRotation) + 1f) / 2f);
+                float yRot = Mathf.Lerp(0, targetYAngle, (Mathf.Cos(currentRotation) + 1f) / 2f);
+                
+                lights[i].transform.localRotation = Quaternion.Euler(xRot, yRot, 0);
             }
         }
 
@@ -361,33 +453,49 @@ public class Execution : MonoBehaviour
         }
     }
 
-    private void AnimateSecondFloorLights(Light[] lights, EditorManger.SecondFloorLightsData lightData, int beat, float beatInterval, float sectionTime)
+    private void AnimateSecondFloorLights(Light[] lights, EditorManger.SecondFloorLightsData lightData, int beat, float beatInterval, float sectionTime, float energy)
     {
         if (lightData.Pulsing)
         {
             for (int i = 0; i < lights.Length; i++)
             {
-                bool on = lightData.PulsingSequence[beat][i];
-                if (lightData.Delayed != null && lightData.Delayed.Length > 0 && lightData.Delayed[0])
+                if (lights[i] == null) continue;
+                
+                bool shouldPulse = lightData.PulsingSequence[beat][i];
+                
+                if (shouldPulse)
                 {
-                    float lightBeatTime = beatInterval * i / lights.Length;
-                    on = ((sectionTime % (beatInterval * 4)) >= lightBeatTime) && on;
+                    float beatPhase = (sectionTime % beatInterval) / beatInterval;
+                    float pulseIntensity = Mathf.Sin(beatPhase * Mathf.PI);
+                    lights[i].intensity = secondFloorLightInitialIntensities[i] * pulseIntensity * energy;
+                    lights[i].gameObject.SetActive(true);
                 }
-                SetLightActive(lights[i], on);
+                else
+                {
+                    lights[i].intensity = 0;
+                }
             }
         }
 
         if (lightData.Rotation)
         {
+            float energySpeedFactor = Mathf.Lerp(0.5f, 2f, energy);
+            float baseSpeed = (2f * Mathf.PI) / (beatInterval * 4f);
+            float actualSpeed = baseSpeed * energySpeedFactor;
+            
             for (int i = 0; i < lights.Length; i++)
             {
-                bool rotate = lightData.RotationSequence[i];
-                float[] startAngles = rotate ? lightData.OnStartingAngle : lightData.OffStartingAngle;
-                float[] angles = rotate ? lightData.OnAngle : lightData.OffAngle;
-                float phase = Mathf.Sin(sectionTime * 2f * Mathf.PI / beatInterval);
-
-                float angle = Mathf.Lerp(startAngles[0], angles[0], (phase + 1f) / 2f);
-                lights[i].transform.localRotation = Quaternion.Euler(0, 0, angle);
+                if (lights[i] == null || !lightData.RotationSequence[i]) continue;
+                
+                // X and Y axis rotation (as specified)
+                float targetXAngle = lightData.OnAngle[0];
+                float targetYAngle = lightData.OnAngle.Length > 1 ? lightData.OnAngle[1] : 0f;
+                
+                float currentRotation = sectionTime * actualSpeed;
+                float xRot = Mathf.Lerp(0, targetXAngle, (Mathf.Sin(currentRotation) + 1f) / 2f);
+                float yRot = Mathf.Lerp(0, targetYAngle, (Mathf.Cos(currentRotation) + 1f) / 2f);
+                
+                lights[i].transform.localRotation = Quaternion.Euler(xRot, yRot, 0);
             }
         }
 
