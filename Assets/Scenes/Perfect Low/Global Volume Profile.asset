@@ -233,7 +233,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 9.897873
   compensation:
     m_OverrideState: 1
     m_Value: 5
@@ -408,7 +408,7 @@ MonoBehaviour:
     m_Value: 200
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 122.8
+    m_Value: 122.71
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
@@ -466,7 +466,7 @@ MonoBehaviour:
   active: 1
   redOutRedIn:
     m_OverrideState: 1
-    m_Value: 111
+    m_Value: 110
   redOutGreenIn:
     m_OverrideState: 1
     m_Value: -30
@@ -509,7 +509,7 @@ MonoBehaviour:
     m_Value: 2
   threshold:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1.11
   intensity:
     m_OverrideState: 1
     m_Value: 0.712
