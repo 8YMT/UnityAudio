@@ -35576,7 +35576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1600401602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35590,7 +35590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 500e733574922d04ea961553b1b26a63, type: 2}
-  m_DrawDistance: 100
+  m_DrawDistance: 99.34
   m_FadeScale: 1
   m_StartAngleFade: 180
   m_EndAngleFade: 180
